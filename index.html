@@ -121,6 +121,7 @@
 
   .load-name{
     text-align:center;color:#fff;opacity:0;
+    max-width:88vw;padding:0 10px;
     animation:fadeUp .7s ease 1.25s both;
   }
   .load-name .eyebrow{
@@ -241,7 +242,9 @@
     padding:11px 8px;border-radius:12px;
     text-decoration:none;color:inherit;
     transition:background .2s ease,transform .2s ease;
+    min-width:0;
   }
+  .rtext{min-width:0;flex:1;}
   .row:hover{background:rgba(27,58,107,.05);}
   a.row:hover{transform:translateX(2px);}
   .ico{
@@ -255,9 +258,13 @@
     font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;
     color:var(--muted);font-weight:600;
   }
-  .rtext .val{font-size:.86rem;color:var(--navy-ink);font-weight:500;line-height:1.45;margin-top:1px;}
+  .rtext .val{font-size:.86rem;color:var(--navy-ink);font-weight:500;line-height:1.45;margin-top:1px;overflow-wrap:anywhere;word-break:break-word;}
   .rtext .val.link{color:var(--navy);font-weight:600;}
   a.row:hover .val.link{color:var(--gold-deep);}
+  /* stacked email links inside one row */
+  .rtext .mail{display:block;text-decoration:none;overflow-wrap:anywhere;word-break:break-word;}
+  .rtext .mail + .mail{margin-top:3px;}
+  .rtext .mail:hover{color:var(--gold-deep);}
 
   .footer{
     margin-top:14px;
@@ -289,6 +296,19 @@
   }
   .lang button.active{background:var(--gold);color:var(--navy-deep);}
   .lang button:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px;}
+
+  @media (max-width:380px){
+    body{padding:16px 12px;}
+    .card{border-radius:20px;}
+    .crest{padding:26px 18px 56px;}
+    .body{padding:58px 18px 12px;}
+    .name{font-size:1.42rem;}
+    .row{gap:11px;padding:10px 6px;}
+    .ico{width:32px;height:32px;}
+    .rtext .val,.rtext .mail{font-size:.8rem;}
+    .lang{top:12px;right:12px;}
+    .footer a{font-size:.78rem;word-break:break-all;}
+  }
 
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.001ms!important;animation-iteration-count:1!important;}
@@ -336,7 +356,7 @@
       </svg>
 
       <div class="brand-row">
-             <img class="brand-logo" src="pkpj.png" style="width: 88px; height: 88px;"alt="PKPJ"
+     <img class="brand-logo" src="pkpj.png" style="width: 88px; height: 88px;"alt="PKPJ"
              onerror="this.classList.add('empty');this.alt='PKPJ logo here';">
       </div>
       <div class="agency" data-en="Perbadanan Kemajuan Perumahan Negeri Johor" data-ms="Perbadanan Kemajuan Perumahan Negeri Johor">Johor State Housing Development Corporation</div>
@@ -346,7 +366,7 @@
     <section class="body">
       <!-- CENTER PHOTO PLACEHOLDER — replace the src below with your image -->
       <div class="avatar">
-        <span><img src="Datin.png" style="width: 88px; height: 88px;"></span>
+       <span><img src="Datin.png" style="width: 88px; height: 88px;"></span>
       </div>
       <div class="title-eyebrow">Datin Paduka</div>
       <h2 class="name">Dr. Suhailizan<br>binti Suliman</h2>
@@ -363,27 +383,30 @@
         <!-- Phone 1 -->
         <a class="row" href="tel:+6072666255">
           <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1l-2.2 2.1z"/></svg></span>
-          <span class="rtext"><span class="lbl" data-en="Phone" data-ms="Telefon">Phone</span><span class="val link">+607-266 6255</span></span>
+          <span class="rtext"><span class="val link">+607-266 6255</span></span>
         </a>
         <!-- Phone 2 -->
         <a class="row" href="tel:+60134887473">
           <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1H7a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm-5 21a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zM17 18H7V4h10v14z"/></svg></span>
-          <span class="rtext"><span class="lbl" data-en="Mobile" data-ms="Telefon Bimbit">Mobile</span><span class="val link">+6013-488 7473</span></span>
+          <span class="rtext"><span class="val link">+6013-488 7473</span></span>
         </a>
-        <!-- Email 1 -->
-        <a class="row" href="mailto:suhailizan@johor.gov.my">
+        <!-- Email (both) -->
+        <div class="row">
           <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
-          <span class="rtext"><span class="lbl" data-en="Official Email" data-ms="E-mel Rasmi">Official Email</span><span class="val link">suhailizan@johor.gov.my</span></span>
-        </a>
-        <!-- Email 2 -->
-        <a class="row" href="mailto:suhailizansuliman74@gmail.com">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
-          <span class="rtext"><span class="lbl" data-en="Email" data-ms="E-mel">Email</span><span class="val link">suhailizansuliman74@gmail.com</span></span>
+          <span class="rtext">
+            <a class="val link mail" href="mailto:suhailizan@johor.gov.my">suhailizan@johor.gov.my</a>
+            <a class="val link mail" href="mailto:suhailizansuliman74@gmail.com">suhailizansuliman74@gmail.com</a>
+          </span>
+        </div>
+        <!-- Facebook -->
+        <a class="row" href="https://www.facebook.com/perbadanankemajuanperumahannegerijohor" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></span>
+          <span class="rtext"><span class="val link">facebook.com/perbadanankemajuanperumahannegerijohor</span></span>
         </a>
         <!-- Address -->
         <a class="row" href="https://maps.google.com/?q=Bangunan+Dato+Abdul+Rahman+Andak+Kota+Iskandar+79503+Iskandar+Puteri+Johor" target="_blank" rel="noopener">
           <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
-          <span class="rtext"><span class="lbl" data-en="Address" data-ms="Alamat">Address</span><span class="val" data-en="Level 1 &amp; 2, Bangunan Dato' Abdul Rahman Andak, Kota Iskandar, 79503 Iskandar Puteri, Johor Darul Ta'zim" data-ms="Aras 1 &amp; 2, Bangunan Dato' Abdul Rahman Andak, Kota Iskandar, 79503 Iskandar Puteri, Johor Darul Ta'zim">Level 1 &amp; 2, Bangunan Dato' Abdul Rahman Andak, Kota Iskandar, 79503 Iskandar Puteri, Johor Darul Ta'zim</span></span>
+          <span class="rtext"><span class="val" data-en="Level 1 &amp; 2, Bangunan Dato' Abdul Rahman Andak, Kota Iskandar, 79503 Iskandar Puteri, Johor Darul Ta'zim" data-ms="Aras 1 &amp; 2, Bangunan Dato' Abdul Rahman Andak, Kota Iskandar, 79503 Iskandar Puteri, Johor Darul Ta'zim">Level 1 &amp; 2, Bangunan Dato' Abdul Rahman Andak, Kota Iskandar, 79503 Iskandar Puteri, Johor Darul Ta'zim</span></span>
         </a>
       </div>
     </section>
