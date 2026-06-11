@@ -33,7 +33,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:28px 18px;
+    padding:32px 22px;
     -webkit-font-smoothing:antialiased;
   }
 
@@ -168,7 +168,7 @@
   .crest{
     position:relative;
     background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
-    padding:30px 26px 64px;
+    padding:30px 32px 64px;
     text-align:center;
     overflow:hidden;
   }
@@ -202,8 +202,8 @@
 
   /* centered photo placeholder — replace src later */
   .avatar{
-    position:absolute;left:50%;top:-54px;transform:translateX(-50%);
-    width:108px;height:108px;border-radius:50%;
+    position:absolute;left:50%;top:-66px;transform:translateX(-50%);
+    width:104px;height:132px;border-radius:16px;
     background:linear-gradient(180deg,#e8edf5,#cfd9e8);
     border:4px solid var(--paper);
     box-shadow:0 12px 30px -8px rgba(12,27,51,.5);
@@ -211,13 +211,13 @@
     overflow:hidden;z-index:5;
   }
   .avatar::after{
-    content:"";position:absolute;inset:0;border-radius:50%;
+    content:"";position:absolute;inset:0;border-radius:12px;
     box-shadow:inset 0 0 0 2px var(--gold);
   }
   .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
   .avatar .ph{font-size:.58rem;letter-spacing:.12em;color:var(--muted);text-align:center;padding:0 8px;}
 
-  .body{position:relative;padding:62px 26px 12px;text-align:center;}
+  .body{position:relative;padding:74px 26px 12px;text-align:center;}
   .title-eyebrow{
     font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;
     color:var(--gold-deep);font-weight:700;
@@ -226,6 +226,13 @@
     font-family:'Cormorant Garamond',serif;
     font-weight:700;font-size:1.62rem;line-height:1.12;
     color:var(--navy);margin-top:8px;
+  }
+  .name .honorific{
+    display:block;
+    font-family:'Manrope',sans-serif;
+    font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold-deep);font-weight:700;
+    margin-bottom:6px;
   }
   .role{
     font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
@@ -269,7 +276,7 @@
   .footer{
     margin-top:14px;
     background:linear-gradient(160deg,var(--navy),var(--navy-deep));
-    padding:16px;text-align:center;
+    padding:18px 26px;text-align:center;
   }
   .footer a{
     color:var(--gold-soft);text-decoration:none;font-weight:700;
@@ -298,15 +305,16 @@
   .lang button:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px;}
 
   @media (max-width:380px){
-    body{padding:16px 12px;}
+    body{padding:20px 16px;}
     .card{border-radius:20px;}
-    .crest{padding:26px 18px 56px;}
-    .body{padding:58px 18px 12px;}
+    .crest{padding:26px 22px 56px;}
+    .body{padding:70px 20px 12px;}
     .name{font-size:1.42rem;}
     .row{gap:11px;padding:10px 6px;}
     .ico{width:32px;height:32px;}
     .rtext .val,.rtext .mail{font-size:.8rem;}
     .lang{top:12px;right:12px;}
+    .footer{padding:16px 22px;}
     .footer a{font-size:.78rem;word-break:break-all;}
   }
 
@@ -336,8 +344,7 @@
     </div>
 
     <div class="load-name">
-      <div class="eyebrow">Datin Paduka</div>
-      <h1>Dr. Suhailizan binti Suliman</h1>
+      <h1>Datin Paduka Dr. Suhailizan binti Suliman</h1>
     </div>
 
     <div class="load-bar"><i></i></div>
@@ -356,20 +363,19 @@
       </svg>
 
       <div class="brand-row">
-     <img class="brand-logo" src="pkpj.png" style="width: 88px; height: 88px;"alt="PKPJ"
+        <img class="brand-logo" src="pkpj.png" style="width: 88px; height: 88px;"alt="PKPJ"
              onerror="this.classList.add('empty');this.alt='PKPJ logo here';">
       </div>
-      <div class="agency" data-en="Perbadanan Kemajuan Perumahan Negeri Johor" data-ms="Perbadanan Kemajuan Perumahan Negeri Johor">Johor State Housing Development Corporation</div>
+      <div class="agency"  data-en="Perbadanan Kemajuan Perumahan Negeri Johor" data-ms="Perbadanan Kemajuan Perumahan Negeri Johor">Johor State Housing Development Corporation</div>
       <div class="gold-rule"></div>
     </header>
 
     <section class="body">
       <!-- CENTER PHOTO PLACEHOLDER — replace the src below with your image -->
       <div class="avatar">
-       <span><img src="Datin.png" style="width: 88px; height: 88px;"></span>
+		<span><img src="Datin.png"></span>
       </div>
-      <div class="title-eyebrow">Datin Paduka</div>
-      <h2 class="name">Dr. Suhailizan<br>binti Suliman</h2>
+       <h2 class="name">Datin Paduka Dr. Suhailizan binti Suliman</h2>
       <div class="role" data-en="Chief Executive" data-ms="Ketua Eksekutif">Chief Executive</div>
 
       <div class="divider">
